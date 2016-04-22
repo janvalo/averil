@@ -1,0 +1,14 @@
+{
+  "name": "averil",
+  "version": "0.0.1",
+  "description": "averil",
+  "author": "Jan Valo",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "jade": "^1.11.0",
+    "node-sass": "^3.4.2"
+  },
+  "dependencies": {
+    "laravel-elixir": "^4.0.0"
+  }
+}
