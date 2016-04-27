@@ -1,0 +1,91 @@
+// Baseline styles
+.table{
+  background: white;
+  color: $base-color;
+  margin-bottom: 20px;
+  width: 100%;
+  th,
+  td{
+      border: 1px solid $table-border-color;
+      border-width: 0 0 1px;
+      padding: 8px 10px;
+      vertical-align: top;
+      &.table-link{
+        padding: 0;
+        & > a{
+          display: block;
+          padding: 8px 10px;
+          &:hover{
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  th{
+      color: $base-color;
+      text-align: left;
+    }
+  tr{
+    &:hover{
+      background: rgba($gray-lighter, 0.3);
+      color: $gray;
+    }
+    &:last-child td{
+      border-bottom-width: 0;
+    }
+  }
+  thead{
+    th,
+    td{
+      border-width: 0 0 2px;
+      color: $gray-light;
+    }
+  }
+  tfoot{
+    th,
+    td{
+      border-width: 2px 0 0;
+      color: $gray-light;
+    }  
+  }
+  &.is-striped{
+    tbody{
+      tr:nth-child(2n){
+        background: rgba($gray-lighter, 0.5);
+        &:hover{
+          background: $gray-lighter;
+        }
+      }
+    }
+  }
+}
+
+// Responsive tables
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+  @media screen and (max-width: $screen-xs-max) {
+    width: 100%;
+    margin-bottom: ($line-height-computed * 0.75);
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid $table-border-color;
+
+    // Tighten up spacing
+    > .table {
+      margin-bottom: 0;
+      // Ensure the content doesn't wrap
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}

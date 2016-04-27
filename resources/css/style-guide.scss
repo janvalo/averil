@@ -1,0 +1,278 @@
+@import "partials/variables";
+@import 'partials/mixins';
+
+
+$success: $color-success; // green
+$alert: $color-danger;  // red
+
+// fonts
+$primary-font: 'Merriweather', serif;
+$secondary-font: 'Open Sans', sans-serif;
+
+
+.ui-nav .has-item.is-brand {
+    flex: 0 0 200px;
+}
+.ui-nav {
+    width: 100%;
+    top: 0;
+    left: 0;
+    background:#fff;
+    z-index:11;
+}
+main.container{
+	margin-top:80px;
+}
+.ui-nav .navbar {
+    padding: 0rem 2rem;
+}
+
+.ui-nav a {
+    padding: 1.4rem 2rem;
+    margin-bottom: 0px;
+}
+
+.ui-nav .container {
+    border-bottom: 1px solid #eee;
+}
+
+.ui-nav .has-item.can-collapse {
+    margin-bottom: -9px;
+}
+/* -------------------------------- 
+xPatterns
+-------------------------------- */
+pre.box {
+    background: #fafafa;
+    border-left: 1px solid #eee;
+}
+div.box.block {
+    //border: 1px solid #E4D523;
+    padding: 15px!important;
+    //border-width: 4px 1px 1px;
+}
+.typo{
+	display:inline-block;
+	margin-top:0;
+}
+.inline-el{
+    a,
+    em,
+    small,
+    strong,
+    u{
+    	display:inline-block;
+    	margin:2rem 4rem 4rem 0;
+    }
+    blockquote{
+    	small{
+    		margin: 0;
+    	}
+    }
+}
+/* -------------------------------- 
+xTypography
+-------------------------------- */
+
+h2.box-title {
+	font-family: $secondary-font;
+	color: #aaa;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
+
+/* -------------------------------- 
+xGrid
+-------------------------------- */
+.show-grid{
+	
+	div[class^=col-],
+	div[class^=col] {
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+		background-color: #E2E2E2;
+		border: 1px solid #fff;
+		border-radius: 3px;
+		text-align:center;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+.show-grid .row div[class^=col]:nth-child(odd){
+	background: $gray-lighter;
+}
+.show-grid div[class^=col-],.show-grid .row div[class^=col]:first-child {
+    background: $color-success;
+    color:#fff;
+}
+/* -------------------------------- 
+xButtons 
+-------------------------------- */
+.box-buttons pre span {
+	/* CSS class name color */ 
+	color: $color-primary;
+}
+pre,code{
+	font-size:1.4rem;
+}
+.on-sidelines{
+	.box.block{
+		padding: 1em 1em 1em 0;
+	}
+}
+.box.block {
+    padding: 1em 0 0;
+    margin-bottom:0;
+}
+
+@import 'partials/basic-style';
+//colors
+$black: #222;
+$white:  white;
+$color_sail: #b3d4fc;
+$color_pampas: #f5f2f0;
+$slate_gray: slategray;
+$color_mountain_mist: #999;
+$color_cardinal_pink: #905;
+$color_limeade: #690;
+$color_barley_corn: #a67f59;
+$color_deep_cerulean: #07a;
+$color_cabaret: #dd4a68;
+$color_california: #e90;
+
+//@extend-elements
+//original selectors
+//code[class*="language-"], pre[class*="language-"]
+%extend_1 {
+	color: $black;
+	background: none;
+	text-shadow: 0 1px $white;
+	font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace';
+	direction: ltr;
+	text-align: left;
+	white-space: pre-line;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	tab-size: 4;
+	hyphens: none;
+}
+
+code[class*="language-"] {
+	@extend %extend_1;
+	::-moz-selection,
+	::selection {
+		text-shadow: none;
+		background: $color_sail;
+	}
+}
+pre[class*="language-"] {
+	@extend %extend_1;
+    padding: 2.8rem 1.4rem 1.4rem;
+    overflow: visible;
+    background: $gray-lighter;
+    border: 1px solid $gray;
+    //border-width: 1px 1px 1px 2px;
+    position: relative;
+	::-moz-selection,
+	::selection {
+		text-shadow: none;
+		background: $color_sail;
+	}
+	&:before {
+	    content: 'Code';
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    background: $gray;
+		left: 0;
+		padding: .2em 1.5rem;
+		font-size: .6em;
+		color: #fff;
+		text-shadow: none;
+		font-weight: 600;
+		border-radius: 0 0 3px 0;
+	}
+}
+pre[class*="language-"]::-moz-selection,
+code[class*="language-"]::-moz-selection,
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection {
+	text-shadow: none;
+	background: $color_sail;
+}
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+.token {
+	&.comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: $slate_gray;
+	}
+	&.punctuation,
+	&.property,
+	&.tag,
+	&.boolean,
+	&.number,
+	&.constant,
+	&.symbol,
+	&.deleted,
+	&.selector,
+	&.attr-name,
+	&.string,
+	&.char,
+	&.builtin,
+	&.inserted {
+		color: $gray;
+	}
+	&.operator,
+	&.entity,
+	&.url {
+		color: $color-success;
+	}
+	&.atrule,
+	&.attr-value,
+	&.keyword {
+		color: $color-primary;
+	}
+	&.function {
+		color: $color_cabaret;
+	}
+	&.regex {
+		color: $color-warning;
+	}
+	&.important {
+		color: $color-warning;
+		font-weight: bold;
+	}
+	&.variable {
+		color: $color-warning;
+	}
+	&.bold {
+		font-weight: bold;
+	}
+	&.italic {
+		font-style: italic;
+	}
+}
+.namespace {
+	opacity: .7;
+}
+:not(pre) > code[class*="language-"] {
+	background: $color_pampas;
+	padding: .1em;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: .3em;
+	white-space: normal;
+}
+.language-css .token.string,
+.style .token.string {
+	color: $color-primary;
+}
