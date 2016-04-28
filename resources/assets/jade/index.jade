@@ -1,0 +1,41 @@
+include _helpers
+
+//- Index.jade
+include _default
+  header.ui-nav.is-fixed
+    .container
+      +navbar
+        +navbar-item.is-left.is-brand
+          a(href='#') IT's UI Elements
+        +navbar-item.can-collapse
+          +nav('tabs')
+            +tabs-link('home')(class="is-active") Home
+            +tabs-link('elements') Elements
+            +tabs-link('components') Components
+            +tabs-link('blocks') Blocks
+
+  main.container
+    .tab-content
+      +div(id='home' class="is-active")
+          p Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. 
+
+      +div(id='elements')
+        //- include _section_colors
+        h1 
+          a.hash-link#elements2 #
+          | Elements
+        include _sections
+
+      +div(id='components')
+        h1 
+          a.hash-link#components2 #
+          | Components
+        include _components
+
+      +div(id='blocks')
+        h1 
+          a.hash-link#blocks2 #
+          | Blocks
+        include _blocks
+
+  - //script(src='js/app.js')

@@ -1,0 +1,107 @@
+include _helpers
+
++section('Navbar','navbar')
+    +box-block
+        +navbar
+            +navbar-item.is-left
+                a.is-brand(href='#') Brand
+            +navbar-item.is-right.can-collapse
+                +nav
+                    +list-link.active Link
+                    +list-link= Link
+
+    +box-block
+        +navbar.is-centered
+            +navbar-item
+                a(href='#') Home
+            +navbar-item
+                a(href='#') Menu
+            +navbar-item
+                img(src='http://placehold.it/120x60', alt='', style='height: 33px;')
+            +navbar-item
+                a(href='#') Reservations
+            +navbar-item
+                a(href='#') Contact
+
+
++section('Cover','cover')
+    +box-block
+        section.hero.is-primary
+            .hero-content
+                .container
+                    h1.title
+                        | Title
+                    h2.subtitle
+                        | Subtitle    
+    +box-block
+        section.hero.is-success.is-fullheight
+            .hero-content
+                .container
+                    h1.title
+                        | Full Height title
+                    h2.subtitle
+                        | Full Height subtitle
+
+
++section('Articles','articles')
+    +box-block
+
++section('Footer','footer')
+    +box-block
+        .footer
+//
+    +section('Modals','modals')
+        +box-block
+            +modal(id="modal-1")
+                +modal-demotext
+
+            button( class="button is-primary is-trigger" data-modal="modal-1") Open Modal
+
+
+    +section('Collapsible Panels','collapse-panels')
+        +box-block
+            .panels(id="accordion" role="tablist")
+                .panel
+                    header(role="tab")
+                        a(data-toggle="collapse" data-parent="#accordion" href="#collapse1") Group Item
+                    .panel-content(id="collapse1")
+                        | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                .panel
+                    header(role="tab")
+                        a(data-toggle="collapse" data-parent="#accordion" href="#collapse2") Group Item
+                    .panel-content(id="collapse2")
+                        | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                .panel
+                    header(role="tab")
+                        a(data-toggle="collapse" data-parent="#accordion" href="#collapse3") Group Item
+                    .panel-content(id="collapse3")
+                        | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+
+
+
+    +section('Tabs','tabs-js')
+        +box-block
+            +nav('tabs')
+                +tabs-link('tabs-home')(class="is-active") Home
+                +tabs-link('tabs-profile') Profile
+                +tabs-link('tabs-other') Other
+            .tabs-content
+                +tab('tabs-home')(class="is-active")
+                    p Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. 
+                +tab('tabs-profile')
+                    p Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR.
+                +tab('tabs-other')
+                    p Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. 
+
+    +section('Dropdowns','dropdown')
+        +box-block
+            .dropdown
+                a(href="#" id="navbarDrop1" class="button dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false") Dropdown
+                ul(class="dropdown-menu" role="menu" aria-labelledby="navbarDrop1")
+                    li
+                        a(href="#" tabindex="-1") One
+                    li
+                        a(href="#" tabindex="-1") Two
+                    li.divider
+                    li
+                        a(href="#" tabindex="-1") Three

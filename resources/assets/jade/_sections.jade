@@ -1,0 +1,95 @@
+include _helpers
+
++section('Typography','typography')(class="is-active")
+  .typo-sections
+    +loop-headings(['h1','h2','h3','h4','h5','h6'])
+
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptate distinctio reprehenderit, autem deleniti ad <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!
+      span
+    ul
+      li list
+      li list
+      li list
+
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptate distinctio reprehenderit, autem deleniti ad <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!
+
+    ol
+      li list
+      li list
+      li list
+
+  .block.inline-el
+    hr
+    a Anchor
+    em Emphasis
+    small Small
+    strong Strong
+    u Underline
+
+    blockquote 
+      p Lorem ipsum dolor sit amet
+      small - Unknown
+
++section('Grid','grid')
+  +box-block
+    .container.show-grid
+        +render-grid
+
++section('Buttons','buttons')
+    +side-box-block
+        +loop('buttons')
+    pre.box
+      - var code = '<button class="button">...</button>'+"\n"+'<button class="button is-dark">...</button>'+"\n"+'<button class="button is-primary">...</button>'+"\n"+'<button class="button is-success">...</button>'+"\n"+'<button class="button is-warning">...</button>'+"\n"+'<button class="button is-danger">...</button>'
+      code(class="language-html")= code
+
+    +side-box-block
+        +loop('buttons','is-outlined')
+    pre.box
+      - var code = '<button class="button is-outlined">...</button>'+"\n"+'<button class="button is-dark is-outlined">...</button>'+"\n"+'<button class="button is-primary is-outlined">...</button>'+"\n"+'<button class="button is-success is-outlined">...</button>'+"\n"+'<button class="button is-warning is-outlined">...</button>'+"\n"+'<button class="button is-danger is-outlined">...</button>'
+      code(class="language-html")= code
+
+
+    +side-box-block
+        +button.is-small Small
+        +button Default
+        +button.is-large Large
+    +box-block
+        .button.is-loading Loading    
+    +box-block
+        button.button(data-toggle="button" id="demo-load-button") Click to load
+
++section('Forms','forms')
+  - var selectData = [{"name":"Option 1","value":"1"}];
+  +side-box-block
+    +form
+      .form-group
+        +form-input('input1','Default Label')(placeholder="Default Input")
+      .form-group.row
+        .col.has-success
+          +form-input(placeholder="Success")
+        .col.has-error
+          +form-input(placeholder="Error")
+      .form-group.row
+        .col
+          +form-radio(id="radio1" name='radioButton' checked='checked') Choice 1
+          +form-radio(id="radio2" name='radioButton') Choice 2
+        .col
+          +form-checkbox(id="checkbox1" name='checkbox1' checked='checked') Option 1
+          +form-checkbox(id="checkbox2" name='checkbox2') Option 2
+        .col
+          +form-select(selectData,'true')(name='select-this')
+      .form-group
+        +form-textarea
+
++section('Tables','tables')
+    +side-box-block
+      - var table = {"cols":["id","name","username","actions"],"rows":[{"id":"11","name":"Jon Hancock","username":"jhsign","actions":"edit:delete"},{"id":"13","name":"Mark Tenessie","username":"mark_ten","actions":"delete"},{"id":"32","name":"Pat McHenry","username":"patMc33","actions":""}]}
+      +table(table)
+
++section('Alerts','alerts')
+    +side-box-block
+        +loop('alerts') Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
++section('Badges','badges')
+    +side-box-block
+        +loop('badges')
