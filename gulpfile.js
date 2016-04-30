@@ -1,7 +1,6 @@
 var elixir  = require('laravel-elixir'),
-BrowserSync = require('laravel-elixir-browsersync'),
-src         = 'src',
-build       = 'build';
+jade		= require('laravel-elixir-jade'),
+BrowserSync = require('laravel-elixir-browsersync2');
 
 /*
  |--------------------------------------------------------------------------
@@ -16,17 +15,24 @@ build       = 'build';
 
 elixir(function(mix) {
 	BrowserSync.init();
-	mix.sass(build + '/css');
+	mix.sass(['averil.scss'],'public/css/averil.css')
+	mix.sass(['style-guide.scss'],'public/css/style-guide.css')
 	mix.jade({
-        search: '*.jade',
-        dest: build
-	});
-	mix.BrowserSync({
-	    server: {baseDir: [build, src]},
-	    port: 9999,
-	    open: false,
-	    files: [build + '/css/*.css', build + '/js/*.js'],
-	    notify: false
-	});
+        baseDir: './resources/assets',
+	    blade: false,
+	    dest: '../../../public/',
+	    pretty: false,
+	    html:true,
+	    search: '*.jade',
+	    src: '/jade/'
+	})
+	mix.BrowserSync(
+	{
+  		files: ['/resources/assets/sass/*.scss','/resources/assets/jade/*.jade'],
+		proxy : "localhost:3030",
+		port: 6699,
+		ui: {
+            port: 6691
+    }})
 });
 

@@ -16,11 +16,13 @@
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: rem(2) solid transparent;
   white-space: nowrap;
   @include button-size($padding-base, $font-size-base, $line-height-base, $border-radius-base);
   @include user-select(none);
-
+  + .button{
+    margin-left:5px;
+  }
   &,
   &:active{
     &:focus{
@@ -34,17 +36,17 @@
     $color-invert: nth($pair,2);
     @if $name == "default"{
       background: transparent;
-      border-color: lighten($color, 60%);
-      color: $color;
+      border-color: lighten($color, 70%);
+      color: lighten($color, 30%);
 
       &:hover,
       &:focus{
-        border-color: lighten($color, 30%);
-        color: $color;
+        border-color: lighten($color, 50%);
+        color: lighten($color, 30%);
         text-decoration: none;
       }
       &:active{
-        border-color: transparent;
+        //border-color: transparent;
         outline: 0;
       }      
       &.is-outlined{

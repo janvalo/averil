@@ -40,8 +40,9 @@ ol,ul{
 	}
 }
 
+[disabled],
 .is-disabled{
-	cursor: disabled;
+  cursor: disabled;
 }
 
 @each $name, $pair in $colors
@@ -61,7 +62,9 @@ ol,ul{
 .is-fixed{
 	position: fixed;
 }
-
+.is-fixed + .container {
+    margin-top: 80px;
+}
 
 @keyframes spin-around {
 	from {
@@ -80,7 +83,7 @@ ol,ul{
 	&:after {
 	    animation: spin-around 600ms infinite linear;
 	    border: 1px solid $gray-light;
-		border-width: 3px 0 2px 3px;
+		border-width: 2px 0 2px 2px;
 		border-color: transparent transparent $gray-light $gray-light;
 	    border-radius: 100%;
 	    content: "";
