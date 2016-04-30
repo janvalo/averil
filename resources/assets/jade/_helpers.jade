@@ -170,16 +170,15 @@ mixin form
     block
 
 mixin form-select(data,hasEmpty)
-    .select
-      select.input&attributes(attributes)
-        if hasEmpty
-          - var selectData = {"name":"Select","value":"0"};
-          +form-option(selectData)
-        if data
-          each option in data
-            +form-option(option)
-        else
-          block
+  select.input&attributes(attributes)
+    if hasEmpty
+      - var selectData = {"name":"Select","value":"0"};
+      +form-option(selectData)
+    if data
+      each option in data
+        +form-option(option)
+    else
+      block
 
 mixin form-option(option)
   option(value=option.value)= option.name
