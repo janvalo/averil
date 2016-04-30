@@ -194,10 +194,11 @@ mixin form-radio
     input(type='radio')&attributes(attributes)
     block
 
-mixin form-input(name,labelText)
+mixin form-input(name,labelText,inline)
   - var names = attributes.id||attributes.name||name;
+  - var isInline = inline?'label':''
   if labelText
-    label(for=names)= labelText
+    label(for=names class=isInline)= labelText
   input.input(type=attributes.type||'text' id=names name=names)&attributes(attributes)
 
 mixin form-textarea

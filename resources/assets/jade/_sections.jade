@@ -62,24 +62,50 @@ include _helpers
   - var selectData = [{"name":"Option 1","value":"1"}];
   +side-box-block
     +form
-      .form-group
-        +form-input('input1','Default Label')(placeholder="Default Input")
-      .form-group.row
-        .col.has-success
-          +form-input(placeholder="Success")
-        .col.has-error
-          +form-input(placeholder="Error")
-      .form-group.row
+      .row
         .col
-          +form-radio(id="radio1" name='radioButton' checked='checked') Choice 1
-          +form-radio(id="radio2" name='radioButton') Choice 2
+          .form-group
+            +form-input('input1','Name',true)(placeholder="Default Input")
+          .form-group.has-success
+            +form-input('input2','Name',true)(placeholder="Success")
+          .form-group.has-error
+            +form-input('input3','Name',true)(placeholder="Error")
+          .form-group.row
+            .col
+              +form-radio(id="radio1" name='radioButton' checked='checked') Choice 1
+              +form-radio(id="radio2" name='radioButton') Choice 2
+            .col
+              +form-checkbox(id="checkbox1" name='checkbox1' checked='checked') Option 1
+              +form-checkbox(id="checkbox2" name='checkbox2') Option 2
+            .col
+              +form-select(selectData,'true')(name='select-this')
+          .form-group
+            +form-textarea
+          .form-group
+            +button(type="button").is-primary Submit
+            +button(type="button") Cancel
         .col
-          +form-checkbox(id="checkbox1" name='checkbox1' checked='checked') Option 1
-          +form-checkbox(id="checkbox2" name='checkbox2') Option 2
-        .col
-          +form-select(selectData,'true')(name='select-this')
-      .form-group
-        +form-textarea
+          .form-group
+            +form-input('input1','Name')(placeholder="Default Input")
+          .form-group.row
+            .col.has-success
+              +form-input('input2','Name')(placeholder="Success")
+            .col.has-error
+              +form-input('input3','Name')(placeholder="Error")
+          .form-group.row
+            .col
+              +form-radio(id="radio1" name='radioButton' checked='checked') Choice 1
+              +form-radio(id="radio2" name='radioButton') Choice 2
+            .col
+              +form-checkbox(id="checkbox1" name='checkbox1' checked='checked') Option 1
+              +form-checkbox(id="checkbox2" name='checkbox2') Option 2
+            .col
+              +form-select(selectData,'true')(name='select-this')
+          .form-group
+            +form-textarea
+          .form-group
+            +button(type="button").is-primary Submit
+            +button(type="button") Cancel
 
 +section('Tables','tables')
     +side-box-block
