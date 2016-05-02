@@ -70,6 +70,8 @@ include _helpers
             +form-input('input2','Name',true)(placeholder="Success")
           .form-group.has-error
             +form-input('input3','Name',true)(placeholder="Error")
+          .form-group
+            +form-select(selectData,'true')(name='select-this')
           .form-group.row
             .col
               +form-radio(id="radio1" name='radioButton' checked='checked') Choice 1
@@ -77,8 +79,6 @@ include _helpers
             .col
               +form-checkbox(id="checkbox1" name='checkbox1' checked='checked') Option 1
               +form-checkbox(id="checkbox2" name='checkbox2') Option 2
-            .col
-              +form-select(selectData,'true')(name='select-this')
           .form-group
             +form-textarea
           .form-group
@@ -92,6 +92,8 @@ include _helpers
               +form-input('input2','Name')(placeholder="Success")
             .col.has-error
               +form-input('input3','Name')(placeholder="Error")
+          .form-group
+            +form-select(selectData,'true')(name='select-this')
           .form-group.row
             .col
               +form-radio(id="radio1" name='radioButton' checked='checked') Choice 1
@@ -99,8 +101,6 @@ include _helpers
             .col
               +form-checkbox(id="checkbox1" name='checkbox1' checked='checked') Option 1
               +form-checkbox(id="checkbox2" name='checkbox2') Option 2
-            .col
-              +form-select(selectData,'true')(name='select-this')
           .form-group
             +form-textarea
           .form-group

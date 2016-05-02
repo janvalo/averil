@@ -12,15 +12,15 @@ include _helpers
 
     +box-block
         +navbar.is-centered
-            +navbar-item
+            +navbar-item.can-collapse
                 a(href='#') Home
-            +navbar-item
+            +navbar-item.can-collapse
                 a(href='#') Menu
             +navbar-item
                 img(src='http://placehold.it/120x60', alt='', style='height: 33px;')
-            +navbar-item
+            +navbar-item.can-collapse
                 a(href='#') Reservations
-            +navbar-item
+            +navbar-item.can-collapse
                 a(href='#') Contact
 
 
@@ -42,14 +42,14 @@ include _helpers
                     h2.subtitle
                         | Full Height subtitle
 
-
-+section('Articles','articles')
-    +box-block
-
-+section('Footer','footer')
-    +box-block
-        .footer
 //
+	+section('Articles','articles')
+	    +box-block
+
+	+section('Footer','footer')
+	    +box-block
+	        .footer
+
     +section('Modals','modals')
         +box-block
             +modal(id="modal-1")

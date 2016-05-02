@@ -5,7 +5,6 @@ header {
 	}
 	@include MQ(M) {
 		@include clearfix;
-
 	}	
 	@include MQ(desktop) {
 		nav {
@@ -13,6 +12,7 @@ header {
 		}
 	}
 }
+
 .nav-trigger {
 	display: block;
 	position: absolute;
@@ -139,65 +139,6 @@ section {
 /* xBranding section - basic style */
 li.box{
 	list-style-type:none;
-}
-
-/* xColor section - basic style */
-
-.box-colors {
-	.row{
-		flex-wrap: wrap;
-	}
-	.col{
-		padding:0 .15rem;
-		flex-wrap:wrap;
-	}
-	.color-swatch {
-		position: relative;
-		width: 100%;
-		padding: 30% 0;
-
-		&::before, &::after {
-			/* lighter and darker color shades of the same swatch */
-			content: '';
-			position: absolute;
-			bottom: 0;
-			width: 50%;
-			height: 50%;
-		}
-
-		&::before {
-			left: 0;
-		}
-
-		&::after {
-			right: 0;
-		}
-	}
-
-	b {
-		display: block;
-		padding: .6em 0;
-	}
-
-	@mixin swatch-color($color){
-		background: $color;
-		&::before {
-			background: lighten($color, 10%);
-		}
-		&::after {
-			background: darken($color, 10%);
-		}
-	}
-
-
-	.color-swatch {
-		&.color-default{	@include swatch-color($color-default);}
-		&.color-primary{	@include swatch-color($color-primary);}
-		&.color-success{	@include swatch-color($color-success);}
-		&.color-info{		@include swatch-color($color-info);}
-		&.color-warning{	@include swatch-color($color-warning);}
-		&.color-danger{		@include swatch-color($color-danger);}
-	}
 }
 
 .box-typography span{

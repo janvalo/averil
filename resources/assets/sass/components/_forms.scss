@@ -301,6 +301,7 @@ input[type="search"] {
   input{
     &:before {
       @include transform(scale(0,0));
+      background:$color-primary;
     }   
     &:checked {
       &:before {
