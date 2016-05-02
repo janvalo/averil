@@ -1,37 +1,34 @@
-.ui-nav .has-item.is-brand {
-  -webkit-flex: 0 0 200px;
-  -ms-flex: 0 0 200px;
-  flex: 0 0 200px; }
-
 .ui-nav {
   width: 100%;
   top: 0;
   left: 0;
   background: #fff;
   z-index: 11; }
+  .ui-nav .has-item.is-brand {
+    -webkit-flex: 0 0 200px;
+    -ms-flex: 0 0 200px;
+    flex: 0 0 200px; }
+  .ui-nav .navbar {
+    padding: 0rem 2rem; }
+  .ui-nav a {
+    padding: 1.4rem 2rem;
+    margin-bottom: 0px; }
+  .ui-nav .container {
+    border-bottom: 1px solid #eee; }
+  .ui-nav .has-item.can-collapse {
+    margin-bottom: -9px; }
 
 main.container {
-  margin-top: 80px; }
+  max-width: 700px;
+  width: 90%; }
 
-.ui-nav .navbar {
-  padding: 0rem 2rem; }
-
-.ui-nav a {
-  padding: 1.4rem 2rem;
-  margin-bottom: 0px; }
-
-.ui-nav .container {
-  border-bottom: 1px solid #eee; }
-
-.ui-nav .has-item.can-collapse {
-  margin-bottom: -9px; }
-
-/* -------------------------------- 
-xPatterns
--------------------------------- */
+/* --- xPatterns --- */
 pre.box {
   background: #fafafa;
-  border-left: 1px solid #eee; }
+  border-left: 1px solid #eee;
+  padding: 15px; }
+  pre.box code {
+    font-size: 90%; }
 
 div.box.block {
   padding: 15px !important; }
@@ -51,18 +48,14 @@ div.box.block {
 .inline-el blockquote small {
   margin: 0; }
 
-/* -------------------------------- 
-xTypography
--------------------------------- */
+/* --- xTypography --- */
 h2.box-title {
   font-family: "Open Sans", sans-serif;
   color: #aaa;
   font-weight: 200;
   text-transform: uppercase; }
 
-/* -------------------------------- 
-xGrid
--------------------------------- */
+/* --- xGrid --- */
 .show-grid div[class^=col-],
 .show-grid div[class^=col] {
   padding-top: 10px;
@@ -81,9 +74,7 @@ xGrid
   background: #15CA8F;
   color: #fff; }
 
-/* -------------------------------- 
-xButtons 
--------------------------------- */
+/* --- xButtons --- */
 .box-buttons pre span {
   /* CSS class name color */
   color: #29A6E2; }
@@ -98,11 +89,7 @@ pre, code {
   padding: 1em 0 0;
   margin-bottom: 0; }
 
-/* -------------------------------- 
-
-xBasic style
-
--------------------------------- */
+/* --- xBasic style --- */
 header nav {
   display: none; }
 
@@ -227,201 +214,8 @@ section {
 li.box {
   list-style-type: none; }
 
-/* xColor section - basic style */
-.box-colors .row {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-
-.box-colors .col {
-  padding: 0 .15rem;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-
-.box-colors .color-swatch {
-  position: relative;
-  width: 100%;
-  padding: 30% 0; }
-  .box-colors .color-swatch::before, .box-colors .color-swatch::after {
-    /* lighter and darker color shades of the same swatch */
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 50%;
-    height: 50%; }
-  .box-colors .color-swatch::before {
-    left: 0; }
-  .box-colors .color-swatch::after {
-    right: 0; }
-
-.box-colors b {
-  display: block;
-  padding: .6em 0; }
-
-.box-colors .color-swatch.color-default {
-  background: #222; }
-  .box-colors .color-swatch.color-default::before {
-    background: #3c3c3c; }
-  .box-colors .color-swatch.color-default::after {
-    background: #090909; }
-
-.box-colors .color-swatch.color-primary {
-  background: #29A6E2; }
-  .box-colors .color-swatch.color-primary::before {
-    background: #56b9e8; }
-  .box-colors .color-swatch.color-primary::after {
-    background: #1a89be; }
-
-.box-colors .color-swatch.color-success {
-  background: #15CA8F; }
-  .box-colors .color-swatch.color-success::before {
-    background: #29e9aa; }
-  .box-colors .color-swatch.color-success::after {
-    background: #109c6e; }
-
-.box-colors .color-swatch.color-info {
-  background: #5bc0de; }
-  .box-colors .color-swatch.color-info::before {
-    background: #85d0e7; }
-  .box-colors .color-swatch.color-info::after {
-    background: #31b0d5; }
-
-.box-colors .color-swatch.color-warning {
-  background: #f0ad4e; }
-  .box-colors .color-swatch.color-warning::before {
-    background: #f4c37d; }
-  .box-colors .color-swatch.color-warning::after {
-    background: #ec971f; }
-
-.box-colors .color-swatch.color-danger {
-  background: #E02B5D; }
-  .box-colors .color-swatch.color-danger::before {
-    background: #e7577f; }
-  .box-colors .color-swatch.color-danger::after {
-    background: #bc1c48; }
-
 .box-typography span {
   color: #aaa;
   font-weight: 100; }
-
-code[class*="language-"], pre[class*="language-"] {
-  color: #222;
-  background: none;
-  text-shadow: 0 1px white;
-  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace';
-  direction: ltr;
-  text-align: left;
-  white-space: pre-line;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none; }
-
-code[class*="language-"] ::-moz-selection,
-code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: #b3d4fc; }
-
-code[class*="language-"] ::-moz-selection,
-code[class*="language-"] ::selection {
-  text-shadow: none;
-  background: #b3d4fc; }
-
-pre[class*="language-"] {
-  padding: 2.8rem 1.4rem 1.4rem;
-  overflow: visible;
-  background: #f3f3f3;
-  border: 1px solid #5f5f5f;
-  position: relative; }
-  pre[class*="language-"] ::-moz-selection,
-  pre[class*="language-"] ::-moz-selection {
-    text-shadow: none;
-    background: #b3d4fc; }
-  pre[class*="language-"] ::-moz-selection,
-  pre[class*="language-"] ::selection {
-    text-shadow: none;
-    background: #b3d4fc; }
-  pre[class*="language-"]:before {
-    content: 'Code';
-    display: block;
-    position: absolute;
-    top: 0;
-    background: #5f5f5f;
-    left: 0;
-    padding: .2em 1.5rem;
-    font-size: .6em;
-    color: #fff;
-    text-shadow: none;
-    font-weight: 600;
-    border-radius: 0 0 3px 0; }
-
-pre[class*="language-"]::-moz-selection,
-code[class*="language-"]::-moz-selection,
-pre[class*="language-"]::-moz-selection,
-code[class*="language-"]::-moz-selection {
-  text-shadow: none;
-  background: #b3d4fc; }
-
-pre[class*="language-"]::-moz-selection,
-code[class*="language-"]::-moz-selection,
-pre[class*="language-"]::selection,
-code[class*="language-"]::selection {
-  text-shadow: none;
-  background: #b3d4fc; }
-
-@media print {
-  code[class*="language-"],
-  pre[class*="language-"] {
-    text-shadow: none; } }
-
-.token.comment, .token.prolog, .token.doctype, .token.cdata {
-  color: slategray; }
-
-.token.punctuation, .token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted, .token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
-  color: #5f5f5f; }
-
-.token.operator, .token.entity, .token.url {
-  color: #15CA8F; }
-
-.token.atrule, .token.attr-value, .token.keyword {
-  color: #29A6E2; }
-
-.token.function {
-  color: #dd4a68; }
-
-.token.regex {
-  color: #f0ad4e; }
-
-.token.important {
-  color: #f0ad4e;
-  font-weight: bold; }
-
-.token.variable {
-  color: #f0ad4e; }
-
-.token.bold {
-  font-weight: bold; }
-
-.token.italic {
-  font-style: italic; }
-
-.namespace {
-  opacity: .7; }
-
-:not(pre) > code[class*="language-"] {
-  background: #f5f2f0;
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal; }
-
-.language-css .token.string,
-.style .token.string {
-  color: #29A6E2; }
 
 /*# sourceMappingURL=style-guide.css.map */

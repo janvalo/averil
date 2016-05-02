@@ -644,7 +644,8 @@ input[type="search"] {
 
 .radio input:before {
   -webkit-transform: scale(0, 0);
-  transform: scale(0, 0); }
+  transform: scale(0, 0);
+  background: #29A6E2; }
 
 .radio input:checked:before {
   -webkit-transform: scale(1, 1);
