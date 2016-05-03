@@ -13,7 +13,6 @@
     }
   }
 }
-
 // Form control focus state
 @mixin form-control-focus($color: $input-border-focus) {
   $color-rgba: rgba(red($color), green($color), blue($color), .6);
@@ -24,24 +23,12 @@
   }
 }
 // Form control sizing
-@mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  #{$parent} {
+@mixin input-size( $input-height, $padding-base, $font-size, $line-height, $border-radius) {
     height: $input-height;
-    padding: $padding-vertical $padding-horizontal;
+    padding: $padding-base;
     font-size: $font-size;
     line-height: $line-height;
     border-radius: $border-radius;
-  }
-
-  select#{$parent} {
-    height: $input-height;
-    line-height: $input-height;
-  }
-
-  textarea#{$parent},
-  select[multiple]#{$parent} {
-    height: auto;
-  }
 }
 // Form
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -123,21 +110,14 @@ input[type="radio"] {
   outline:none;
   background-color: $input-bg;
   border: rem(2) solid $input-border;
-  border-radius: $input-border-radius;
   box-shadow: none;
   box-sizing: border-box;
-  height: $input-height-base;
-  padding: $padding-base;
   width: 100%;
-  height: $input-height-base;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
   color: $input-color;
+  @include input-size($input-height-base,$padding-base, $font-size-base, $line-height-base, $input-border-radius);
   @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
-
   // Customize the `:focus` state to imitate native WebKit styles.
   @include form-control-focus;
-
   // Placeholder
   @include placeholder;
 
@@ -157,6 +137,12 @@ input[type="radio"] {
     background-color: $input-bg-disabled;
     opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
     cursor: $cursor-disabled;
+  }
+  &.is-large {
+    @include input-size($input-height-large, $padding-large, $font-size-large, $line-height-large, $border-radius-large);
+  }
+  &.is-small {
+    @include input-size($input-height-small, $padding-small, $font-size-small, $line-height-small, $border-radius-small);
   }
 }
 select.input{
