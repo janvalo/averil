@@ -98,7 +98,9 @@
     $padding-base-vertical:     6px !default;
     $padding-base:              $padding-base-vertical 12px !default;
 
+    $padding-large-vertical:    10px !default;
     $padding-large:             10px 16px !default;
+    $padding-small-vertical:    5px !default;
     $padding-small:             5px 10px !default;
 
     $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
@@ -153,6 +155,8 @@
 
     //** Default `.form-control` height
     $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+    $input-height-small:             ($line-height-computed + ($padding-small-vertical * 2) + 2) !default;
+    $input-height-large:             ($line-height-computed + ($padding-large-vertical * 2) + 2) !default;
     //** `.form-group` margin
     $form-group-margin-bottom:       15px !default;
 
