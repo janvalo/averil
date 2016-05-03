@@ -11,8 +11,8 @@ include _default
           +nav('tabs')
             +list-link('home')(class="is-active") Home
             +list-link('elements') Elements
-            +list-link('components') Components
-            +list-link('blocks') Blocks
+            //+list-link('components') Components
+            //+list-link('blocks') Blocks
 
   main.container
     .tab-content
@@ -31,11 +31,6 @@ include _default
           a.hash-link#components2 #
           | Components
         include _components
-
-      +div(id='blocks')
-        h1 
-          a.hash-link#blocks2 #
-          | Blocks
         include _blocks
 
   - //script(src='js/app.js')
