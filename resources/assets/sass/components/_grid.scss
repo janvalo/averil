@@ -112,7 +112,7 @@
     padding:0;
   }
   @include gridResponsive(tablet, '');
-  @include gridResponsive(desktop, 'md');
+  //@include gridResponsive(desktop, 'md');
   //@include gridResponsive(L, 'lg');
 
   @include MQ(tablet) {
