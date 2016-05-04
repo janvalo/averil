@@ -1,45 +1,27 @@
-.hero.is-video{
-  @include overlay();
-  overflow: hidden;
-  &.is-transparent{
-      opacity: 0.3;
-  }  
-  video{
-    left: 50%;
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-}
-.hero-content{
-  padding: 40px 20px;
-  @include MQ(desktop){
-    padding: 40px 0;
-  }
-}
-.has-buttons{
-  margin-top: 20px;
-  @include MQ(phone){
-    .button{
-      display: block;
-      &:not(:last-child){
-        margin-bottom: 10px;
-      }
-    }
-  }
-  @include MQ(tablet){
-    display: flex;
-    justify-content: center;
-    .button:not(:last-child){
-      margin-right: 20px;
-    }
-  }
-}
-.hero{
+.cover{
   background: #fff;
   text-align: center;
+  .is-video{
+    @include overlay();
+    overflow: hidden;
+    &.is-transparent{
+        opacity: 0.3;
+    }  
+    video{
+      left: 50%;
+      min-height: 100%;
+      min-width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+  &-content{
+    padding: 40px 20px;
+    @include MQ(desktop){
+      padding: 40px 0;
+    }
+  }
   .navbar{
       background: none;
   }
@@ -84,6 +66,24 @@
       flex: 1;
       flex-direction: column;
       justify-content: center;
+    }
+  }
+}
+.has-buttons{
+  margin-top: 20px;
+  @include MQ(phone){
+    .button{
+      display: block;
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
+    }
+  }
+  @include MQ(tablet){
+    display: flex;
+    justify-content: center;
+    .button:not(:last-child){
+      margin-right: 20px;
     }
   }
 }

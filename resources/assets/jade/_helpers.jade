@@ -257,12 +257,13 @@ mixin loop-headings(hs)
 
 //- BLOCKS
 //- Block Navbar
-mixin navbar
+mixin navbar(noToggle)
     nav.navbar&attributes(attributes)
-        a.is-toggle(href="#")
-            span
-            span
-            span
+        if !noToggle
+            a.is-toggle(href="#")
+                span
+                span
+                span
         block
 
 mixin navbar-item
