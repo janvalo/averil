@@ -12,7 +12,7 @@ $secondary-font: 'Open Sans', sans-serif;
 	width: 100%;
 	top: 0;
 	left: 0;
-	background:#fff;
+	background:$color-primary;
 	z-index:11;
 	.has-item.is-brand {
 		flex: 0 0 200px;
@@ -25,15 +25,11 @@ $secondary-font: 'Open Sans', sans-serif;
 	    margin-bottom: 0px;
 	}
 	.container {
-	    border-bottom: 1px solid #eee;
-	}
-	.has-item.can-collapse {
-	    margin-bottom: -9px;
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	}
 }
 
 main.container {
-    max-width: 700px;
     width: 90%;
 }
 
