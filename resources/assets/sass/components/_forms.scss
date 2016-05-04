@@ -197,10 +197,10 @@ input[type="search"] {
     margin-bottom: $form-group-margin-bottom!important;
   }
   .label + .input{
-    padding-left:135px;
+    padding-left:135px!important;
   }
   .label {
-    width: 130px;
+    width: 120px;
     text-align: right;
     position: absolute;
     top: 2px;
@@ -216,6 +216,22 @@ input[type="search"] {
     .label {
       margin-left: 1rem;
       width: (rem(120) - 1rem);
+    }
+  }
+  &.is-large {
+    .input{
+      @include input-size($input-height-large, $padding-large, $font-size-large, $line-height-large, $border-radius-large);
+    }
+    .label {
+      padding:$padding-large;
+    }
+  }
+  &.is-small {
+    .input{
+      @include input-size($input-height-small, $padding-small, $font-size-small, $line-height-small, $border-radius-small);
+    }
+    .label {
+      padding:$padding-small;
     }
   }
 }
