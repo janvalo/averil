@@ -2,35 +2,46 @@ include _helpers
 
 //- Index.jade
 include _default
-  header.ui-nav.is-fixed
-    .container
-      +navbar
-        +navbar-item.is-left.is-brand
-          a(href='#') IT's UI Elements
-        +navbar-item.can-collapse
-          +nav('tabs')
-            +list-link('home')(class="is-active") Home
-            +list-link('elements') Elements
-            //+list-link('components') Components
-            //+list-link('blocks') Blocks
+  header
+
+  .cover.is-primary
+    .ui-nav.is-fixed
+      .container
+        +navbar('no-toggle').is-centered
+          +navbar-item.can-collapse
+            +nav('tabs')
+              +list-link('#elements') Elements
+              +list-link('#components') Components
+          +navbar-item.is-brand
+            a(href='#home') Averil
+          +navbar-item
+            +nav('tabs').is-right
+              a.button.is-outlined(href='#home') Github
+
+    .cover-content
+      .container
+        h1.title
+          | Averil 
+        h2.subtitle
+          | A Minimal CSS Framework
 
   main.container
-    .tab-content
-      +div(id='home' class="is-active")
-          p Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. 
+    +div(id='home' class="is-active")
+      section
+        p This is my personal project to build up repository/bundle of components, modules to use on future projects
 
-      +div(id='elements')
-        //- include _section_colors
-        h1 
-          a.hash-link#elements2 #
-          | Elements
-        include _sections
+    +div(id='elements')
+      //- include _section_colors
+      h1 
+        a.hash-link#elements2 #
+        | Elements
+      include _sections
 
-      +div(id='components')
-        h1 
-          a.hash-link#components2 #
-          | Components
-        include _components
-        include _blocks
+    +div(id='components')
+      h1 
+        a.hash-link#components2 #
+        | Components
+      include _components
+      include _blocks
 
   - //script(src='js/app.js')
