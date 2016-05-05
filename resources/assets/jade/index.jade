@@ -8,15 +8,17 @@ include _default
     .ui-nav.is-fixed
       .container
         +navbar('no-toggle').is-centered
-          +navbar-item.can-collapse
-            +nav('tabs')
+          +navbar-item.can-collapse.is-left.has-two
+            +nav()
+              +list-link('#setup') Getting Started
               +list-link('#elements') Elements
               +list-link('#components') Components
           +navbar-item.is-brand
             a(href='#home') Averil
-          +navbar-item
-            +nav('tabs').is-right
+          +navbar-item.is-right.has-two
+            +nav()
               a.button.is-outlined(href='#home') Github
+              a.button.is-outlined(href='#home') Twitter
 
     .cover-content
       .container
@@ -29,6 +31,12 @@ include _default
     +div(id='home' class="is-active")
       section
         p This is my personal project to build up repository/bundle of components, modules to use on future projects
+
+    +div(id='setup')
+      //- include _section_colors
+      h1 
+        a.hash-link#setup2 #
+        | Getting Started
 
     +div(id='elements')
       //- include _section_colors
