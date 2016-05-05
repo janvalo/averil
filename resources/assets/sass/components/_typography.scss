@@ -69,6 +69,7 @@ blockquote{
 	margin-left: 0;
 	margin-right: 0;
 	padding: 1rem 1.5rem;
+	margin: 1.5rem 0;
 	small {
 		font-style:italic;
 	}
@@ -85,9 +86,25 @@ pre{
   font-family: monospace;
   font-size: 1em;
 }
+code {
+    background: $gray-lighter;
+    padding: 1px 4px;
+    display: inline-block;
+    margin: 3px;
+    color: $color-danger;
+}
+pre code{
+	background:none;
+	color: $color-default;
 
+}
+.title{
+	margin-bottom:0.5rem;
+}
 .subtitle{
 	color:$gray-light;
+	margin-top:0.5rem;
+	font-weight:300;
 }
 
 
