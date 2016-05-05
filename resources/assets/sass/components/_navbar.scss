@@ -17,6 +17,7 @@
       margin-bottom: 10px;
     }
   }
+
 }
 
 .navbar{
@@ -39,7 +40,13 @@
     & > .has-item{
       &:not(.is-narrow){
         flex: 1;
+      }
+      &.has-two{
+        flex:2;
       }  
+      &.has-three{
+        flex:3;
+      }
     }
   }
 }
