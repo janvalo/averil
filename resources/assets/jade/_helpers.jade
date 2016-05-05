@@ -2,8 +2,10 @@
 - var cardData = [{"title":"The Awesome Product","subtitle":"Chris Jones","tags":[{"name":"@barbs","link":"#"},{"name":"#test","link":"#"}],"featured_image":"http://lorempixel.com/image_output/fashion-q-c-300-225-10.jpg","time":"20 Jan 2016","image":"http://lorempixel.com/image_output/people-q-c-60-60-1.jpg","content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis."}]
 - var mediaData = [{"name":"Barbara Middleton","tag":"@barbs","time":"30 mins ago","image":"http://lorempixel.com/image_output/people-q-c-60-60-1.jpg","content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.","children":[{"name":"John Smith","tag":"","time":"20 mins ago","image":"http://lorempixel.com/image_output/people-q-c-60-60-2.jpg","content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis."},{"name":"John Smith","tag":"","time":"10 mins ago","image":"http://lorempixel.com/image_output/people-q-c-60-60-2.jpg","content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis."}]}]
 
-mixin section(name, id)
-    h2.box-title= name
+mixin section(name, id, subtitle)
+    h2.box-title.title= name
+    if (subtitle)
+        h3.subtitle= subtitle
     section(id=id class='box-'+id)
         if block
           block
@@ -13,9 +15,14 @@ mixin box-block
         block
 
 mixin side-box-block
-    .on-sidelines&attributes(attributes)
+    .on-sidelines.is-example&attributes(attributes)
         +box-block
             block
+
+mixin code-block(code)
+    .is-example-code
+      pre.box
+        code(class="language-html")= code
 
 mixin swatch(classes)
     .col.col-sm-3.col-md-4.col-xs-6.text-center
