@@ -287,7 +287,8 @@ blockquote {
   border-left: 0.2rem solid #9c9c9c;
   margin-left: 0;
   margin-right: 0;
-  padding: 1rem 1.5rem; }
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0; }
   blockquote small {
     font-style: italic; }
   blockquote *:last-child {
@@ -301,8 +302,24 @@ pre {
   font-family: monospace;
   font-size: 1em; }
 
+code {
+  background: #f3f3f3;
+  padding: 1px 4px;
+  display: inline-block;
+  margin: 3px;
+  color: #E02B5D; }
+
+pre code {
+  background: none;
+  color: #222; }
+
+.title {
+  margin-bottom: 0.5rem; }
+
 .subtitle {
-  color: #9c9c9c; }
+  color: #9c9c9c;
+  margin-top: 0.5rem;
+  font-weight: 300; }
 
 .button {
   display: inline-block;
@@ -1413,7 +1430,15 @@ input[type="search"] {
       .navbar > .has-item:not(.is-narrow) {
         -webkit-flex: 1;
         -ms-flex: 1;
-        flex: 1; } }
+        flex: 1; }
+      .navbar > .has-item.has-two {
+        -webkit-flex: 2;
+        -ms-flex: 2;
+        flex: 2; }
+      .navbar > .has-item.has-three {
+        -webkit-flex: 3;
+        -ms-flex: 3;
+        flex: 3; } }
 
 @media only screen and (max-width: 30em) {
   .is-toggle span {
@@ -1558,6 +1583,9 @@ input[type="search"] {
     background: none; }
   .cover .tabs a, .cover .tabs ul {
     border: none; }
+  .cover .button {
+    border-color: #fff;
+    padding: 6px 12px; }
   .cover.is-light {
     background: #f3f3f3;
     color: #5f5f5f; }
@@ -1568,42 +1596,84 @@ input[type="search"] {
     color: white; }
     .cover.is-default a {
       color: white !important; }
+    .cover.is-default .title {
+      margin-bottom: 0.5rem; }
     .cover.is-default .subtitle {
+      color: white;
+      margin-top: 0.5rem;
+      font-weight: 300; }
+    .cover.is-default .button {
+      border-color: white;
       color: white; }
   .cover.is-dark {
     background: #222;
     color: white; }
     .cover.is-dark a {
       color: white !important; }
+    .cover.is-dark .title {
+      margin-bottom: 0.5rem; }
     .cover.is-dark .subtitle {
+      color: white;
+      margin-top: 0.5rem;
+      font-weight: 300; }
+    .cover.is-dark .button {
+      border-color: white;
       color: white; }
   .cover.is-primary {
     background: #29A6E2;
     color: white; }
     .cover.is-primary a {
       color: white !important; }
+    .cover.is-primary .title {
+      margin-bottom: 0.5rem; }
     .cover.is-primary .subtitle {
+      color: white;
+      margin-top: 0.5rem;
+      font-weight: 300; }
+    .cover.is-primary .button {
+      border-color: white;
       color: white; }
   .cover.is-success {
     background: #15CA8F;
     color: white; }
     .cover.is-success a {
       color: white !important; }
+    .cover.is-success .title {
+      margin-bottom: 0.5rem; }
     .cover.is-success .subtitle {
+      color: white;
+      margin-top: 0.5rem;
+      font-weight: 300; }
+    .cover.is-success .button {
+      border-color: white;
       color: white; }
   .cover.is-warning {
     background: #f0ad4e;
     color: white; }
     .cover.is-warning a {
       color: white !important; }
+    .cover.is-warning .title {
+      margin-bottom: 0.5rem; }
     .cover.is-warning .subtitle {
+      color: white;
+      margin-top: 0.5rem;
+      font-weight: 300; }
+    .cover.is-warning .button {
+      border-color: white;
       color: white; }
   .cover.is-danger {
     background: #E02B5D;
     color: white; }
     .cover.is-danger a {
       color: white !important; }
+    .cover.is-danger .title {
+      margin-bottom: 0.5rem; }
     .cover.is-danger .subtitle {
+      color: white;
+      margin-top: 0.5rem;
+      font-weight: 300; }
+    .cover.is-danger .button {
+      border-color: white;
       color: white; }
   .cover.is-fullheight {
     -webkit-align-items: stretch;

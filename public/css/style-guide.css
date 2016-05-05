@@ -4,10 +4,13 @@
   left: 0;
   background: #29A6E2;
   z-index: 11; }
-  .ui-nav .has-item.is-brand {
-    -webkit-flex: 0 0 200px;
-    -ms-flex: 0 0 200px;
-    flex: 0 0 200px; }
+  .ui-nav .is-brand a {
+    background: #29A6E2 url('data:image/svg+xml;utf8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 313 313" version="1"><path d="m111 204 0-90" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.24;stroke-width:32.4;stroke:#000"/><path d="m111 200 0-90" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:32.4;stroke:#fff"/><path d="m157 160c-23 0-46-22-46-46 0-25 22-45 46-45 25 0 45 20 45 45l0 137" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.24;stroke-width:32.4;stroke:#000"/><circle r="16" cy="252" cx="111" style="fill-opacity:0.24;fill:#000"/><path d="m157 156c-23 0-46-22-46-46 0-25 22-45 46-45 25 0 45 20 45 45l0 137" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32.4;stroke:#fff"/><circle cx="111" cy="248" r="16" fill="#fff"/></svg>') no-repeat center center;
+    background-size: contain;
+    text-indent: -9999px;
+    display: inline-block;
+    width: 50px;
+    height: 50px; }
   .ui-nav .navbar {
     padding: 0rem 2rem; }
   .ui-nav a {
@@ -20,12 +23,8 @@ main.container {
   width: 90%; }
 
 /* --- xPatterns --- */
-pre.box {
-  background: #fafafa;
-  border-left: 1px solid #eee;
-  padding: 15px; }
-  pre.box code {
-    font-size: 90%; }
+pre.box code {
+  font-size: 100%; }
 
 div.box.block {
   padding: 15px !important; }
@@ -47,8 +46,6 @@ div.box.block {
 
 /* --- xTypography --- */
 h2.box-title {
-  font-family: "Open Sans", sans-serif;
-  color: #aaa;
   font-weight: 200;
   text-transform: uppercase; }
 
@@ -75,9 +72,6 @@ h2.box-title {
 .box-buttons pre span {
   /* CSS class name color */
   color: #29A6E2; }
-
-pre, code {
-  font-size: 1.4rem; }
 
 .on-sidelines .box.block {
   padding: 1em 1em 1em 0; }
@@ -171,6 +165,38 @@ header nav {
     padding: .8em 1.6em;
     text-decoration: none;
     transition: all 0.2s; }
+
+.is-example {
+  border: 1px solid #f0ad4e;
+  padding: 2rem;
+  position: relative;
+  margin: 2rem 0; }
+  .is-example:before {
+    content: 'Example';
+    color: #f0ad4e;
+    background: #fff;
+    position: absolute;
+    top: -12px;
+    padding: 2px 6px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem; }
+
+.is-example-code {
+  border: 1px solid #9c9c9c;
+  padding: 2rem;
+  position: relative;
+  margin: 2rem 0; }
+  .is-example-code:before {
+    content: 'Code';
+    color: #222;
+    background: #fff;
+    position: absolute;
+    top: -12px;
+    padding: 2px 6px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem; }
 
 .nav-is-visible .nav-trigger span::before {
   -webkit-transform: translateY(0) rotate(-45deg);
