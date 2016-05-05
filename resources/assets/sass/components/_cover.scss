@@ -30,7 +30,10 @@
       border: none;
     }     
   }
-
+  .button {
+      border-color: #fff;
+      padding: 6px 12px;
+  }
   &.is-light {
     background: $gray-lighter;
     color: $gray;
@@ -49,7 +52,16 @@
       a {
         color: $color-invert!important;
       }
+      .title{
+        margin-bottom:0.5rem;
+      }
       .subtitle{
+        color: $color-invert;
+        margin-top:0.5rem;
+        font-weight:300;
+      }
+      .button {
+        border-color: $color-invert;
         color: $color-invert;
       }
     }
