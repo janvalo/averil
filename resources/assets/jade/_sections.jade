@@ -6,7 +6,6 @@ include _helpers
 
   +side-box-block
     .typo-sections
-      +loop-headings(['h1','h2','h3','h4','h5','h6'])
       h1 Heading 1
       small Quidem neque illum, blanditiis!
       hr
@@ -126,3 +125,5 @@ include _helpers
 +section('Badges','badges')
     +side-box-block
         +loop('badges')
+    +side-box-block
+        +loop('badges','can-close')

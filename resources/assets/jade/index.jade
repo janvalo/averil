@@ -23,30 +23,25 @@ include _default
     .cover-content
       .container
         h1.title
-          | Averil 
+          | Averil
         h2.subtitle
           | A Minimal CSS Framework
 
   main.container
-    +div(id='home' class="is-active")
-      section
-        p This is my personal project to build up repository/bundle of components, modules to use on future projects
-
     +div(id='setup')
-      //- include _section_colors
-      h1 
+      h1
         a.hash-link#setup2 #
         | Getting Started
 
     +div(id='elements')
       //- include _section_colors
-      h1 
+      h1
         a.hash-link#elements2 #
         | Elements
       include _sections
 
     +div(id='components')
-      h1 
+      h1
         a.hash-link#components2 #
         | Components
       include _components

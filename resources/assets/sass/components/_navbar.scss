@@ -17,6 +17,12 @@
       margin-bottom: 10px;
     }
   }
+  &.has-two{
+    flex:2;
+  }  
+  &.has-three{
+    flex:3;
+  }
 
 }
 
@@ -42,7 +48,7 @@
         flex: 1;
       }
       &.has-two{
-        flex:2;
+        flex:2!important;
       }  
       &.has-three{
         flex:3;

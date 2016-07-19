@@ -247,6 +247,8 @@ mixin loop(type, classes)
         - var clss = classes?(cv+' '+classes):cv;
         if type == 'badges'
             +badge(class=clss)= val
+                if classes == 'can-close'
+                    span.is-close
         else if type == 'alerts'
             +alert(class=clss)
                 .can-close
