@@ -1,0 +1,101 @@
+.cover{
+  background: #fff;
+  text-align: center;
+  .is-video{
+    @include overlay();
+    overflow: hidden;
+    &.is-transparent{
+        opacity: 0.3;
+    }  
+    video{
+      left: 50%;
+      min-height: 100%;
+      min-width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+  &-content{
+    padding: 40px 20px;
+    @include MQ(desktop){
+      padding: 40px 0;
+    }
+  }
+  .navbar{
+      background: none;
+  }
+  .tabs{
+    a, ul{
+      border: none;
+    }     
+  }
+  .button {
+      border-color: #fff;
+      padding: 6px 12px;
+  }
+  &.is-light {
+    background: $gray-lighter;
+    color: $gray;
+    a {
+      color: $gray!important;
+    }
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      background: $color;
+      color: $color-invert;
+      a {
+        color: $color-invert!important;
+      }
+      .title{
+        margin-bottom:0.5rem;
+      }
+      .subtitle{
+        color: $color-invert;
+        margin-top:0.5rem;
+        font-weight:300;
+      }
+      .button {
+        border-color: $color-invert;
+        color: $color-invert;
+      }
+    }
+  }
+
+  &.is-fullheight{
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    .hero-content{
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+.has-buttons{
+  margin-top: 20px;
+  @include MQ(phone){
+    .button{
+      display: block;
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
+    }
+  }
+  @include MQ(tablet){
+    display: flex;
+    justify-content: center;
+    .button:not(:last-child){
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+// VARIABLES
+//
+//==
+    $component-dir: 'components/';
+//== Colors
+
+    $base-color:            #222 !default;
+    $gray-base:             #222 !default;
+    $gray-darker:           darken($gray-base, 20%) !default;
+    $gray-dark:             darken($gray-base, 10%) !default;
+    $gray:                  lighten($gray-base, 24%) !default;
+    $gray-light:            lighten($gray-base, 48%) !default;
+    $gray-lighter:          lighten($gray-base, 82%) !default;
+
+    $color-default:         $base-color;
+    $color-primary:         #29A6E2;
+    $color-success:         #15CA8F;
+    $color-info:            #5bc0de;
+    $color-warning:         #f0ad4e;
+    $color-danger:          #E02B5D;
+    $color-dark:            #222;
+    $color-light:           #fff !default;
+//== Color Definitions Defined in an object for loop purposes
+    //  Color Name    Color             Inverted Color
+    $colors:( 
+        default:    ( $color-default,   getInverted($color-default) ),
+        dark:       ( $color-dark,      getInverted($color-dark)    ), 
+        primary:    ( $color-primary,   getInverted($color-primary) ), 
+    //  info:       ( $color-info,      getInverted($color-info)    ), 
+        success:    ( $color-success,   getInverted($color-success) ), 
+        warning:    ( $color-warning,   getInverted($color-warning) ), 
+        danger:     ( $color-danger,    getInverted($color-danger)  )
+    );
+    
+
+//== Scaffolding
+    //## Settings for some of the most global styles.
+    //** Global text color on `<body>`.
+    $text-color:            $gray-dark !default;
+    //** Global textual link color.
+    $link-color:            $color-primary !default;
+    //** Link hover color set via `darken()` function.
+    $link-hover-color:      darken($link-color, 15%) !default;
+    //** Link hover decoration.
+    $link-hover-decoration: underline !default;
+
+//== Media queries breakpoints
+    //## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+    // Extra small screen / phone
+    $screen-xs-min:              30em !default;
+    // Small screen / tablet
+    $screen-sm-min:              48em !default;
+    // Medium screen / desktop
+    $screen-md-min:              62em !default;
+    // Large screen / wide desktop
+    $screen-lg-min:              75em !default;
+    // So media queries don't overlap when required, provide a maximum
+    $screen-xs-max:              ($screen-sm-min - 1) !default;
+    $screen-sm-max:              ($screen-md-min - 1) !default;
+    $screen-md-max:              ($screen-lg-min - 1) !default;
+
+//== Typography
+    //## Font, line-height, and color for body text, headings, and more.
+
+    $font-family-sans-serif:    "Ubuntu", Helvetica, Arial, sans-serif !default;
+    $font-family-serif:         Georgia, "Times New Roman", Times, serif !default;
+    //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+    $font-family-monospace:     Menlo, Monaco, Consolas, "Courier New", monospace !default;
+    $font-family-base:          $font-family-sans-serif !default;
+
+    $font-base:                 1.6rem !default;
+    $font-size-base:            16px !default;
+    $font-size-large:           ceil(($font-size-base * 1.125)) !default; // ~20px
+    $font-size-small:           ceil(($font-size-base * 0.75)) !default; // ~12px
+
+    $font-size-h1:              rem(48) !default; // ~48px
+    $font-size-h2:              rem(36) !default; // ~36px
+    $font-size-h3:              rem(24) !default; // ~24px
+    $font-size-h4:              rem(18) !default; // ~18px
+    $font-size-h5:              $font-base !default;
+    $font-size-h6:              rem(12) !default; // ~12px
+
+    //** Unit-less `line-height` for use in components like buttons.
+    $line-height-base:          24/16 !default;
+    //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+    $line-height-computed:      floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+    //** By default, this inherits from the `<body>`.
+    $headings-font-family:      inherit !default;
+    $headings-font-weight:      500 !default;
+    $headings-line-height:      1.1 !default;
+    $headings-color:            inherit !default;
+
+//== Components
+    //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+    $padding-base-vertical:     6px !default;
+    $padding-base:              $padding-base-vertical 12px !default;
+
+    $padding-large-vertical:    10px !default;
+    $padding-large:             10px 16px !default;
+    $padding-small-vertical:    5px !default;
+    $padding-small:             5px 10px !default;
+
+    $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+    $line-height-small:         1.5 !default;
+
+    $border-radius-base:        3px !default;
+    $border-radius-large:       4px !default;
+    $border-radius-small:       2px !default;
+
+    //** Width of the `border` for generating carets that indicator dropdowns.
+    $caret-width-base:          4px !default;
+    //** Carets increase slightly in size for larger components.
+    $caret-width-large:         5px !default;
+
+//== Tables
+    //## Customizes the `.table` component with basic values, each used across all table variations.
+
+    //** Padding for `<th>`s and `<td>`s.
+    $table-cell-padding:            8px !default;
+    //** Padding for cells in `.table-condensed`.
+    $table-condensed-cell-padding:  5px !default;
+    //** Background color used for `.table-striped`.
+    $table-bg-accent:               #f9f9f9 !default;
+    //** Background color used for `.table-hover`.
+    $table-bg-hover:                #f5f5f5 !default;
+    $table-bg-active:               $table-bg-hover !default;
+    //** Border color for table and cell borders.
+    $table-border-color:            #ddd !default;
+
+//== Forms
+
+    //** `<input>` background color
+    $input-bg:                       #fff !default;
+    //** `<input disabled>` background color
+    $input-bg-disabled:              $gray-lighter !default;
+
+    //** Text color for `<input>`s
+    $input-color:                    $gray !default;
+    //** `<input>` border color
+    $input-border:                   #ddd !default;
+
+    // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+    //** Default `.form-control` border radius
+    // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+    $input-border-radius:            0;//$border-radius-base !default;
+
+    //** Border color for inputs on focus
+    $input-border-focus:             #66afe9 !default;
+
+    //** Placeholder text color
+    $input-color-placeholder:        #999 !default;
+
+    //** Default `.form-control` height
+    $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+    $input-height-small:             ($line-height-computed + ($padding-small-vertical * 2) + 2) !default;
+    $input-height-large:             ($line-height-computed + ($padding-large-vertical * 2) + 2) !default;
+    //** `.form-group` margin
+    $form-group-margin-bottom:       15px !default;
+
+    $legend-color:                   $gray-dark !default;
+    $legend-border-color:            #e5e5e5 !default;
+
+    //** Disabled cursor for form controls and buttons.
+    $cursor-disabled:                not-allowed !default;
+
+//== Type
+
+    //** Horizontal offset for forms and lists.
+    $component-offset-horizontal: 180px !default;
+    //** Text muted color
+    $text-muted:                  $gray-light !default;
+    //** Abbreviations and acronyms border color
+    $abbr-border-color:           $gray-light !default;
+    //** Headings small color
+    $headings-small-color:        $gray-light !default;
+    //** Blockquote small color
+    $blockquote-small-color:      $gray-light !default;
+    //** Blockquote font size
+    $blockquote-font-size:        ($font-size-base * 1.25) !default;
+    //** Blockquote border color
+    $blockquote-border-color:     $gray-lighter !default;
+
+

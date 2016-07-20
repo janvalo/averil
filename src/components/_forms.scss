@@ -1,0 +1,324 @@
+// Form validation states
+@mixin form-control-validation($color: #555) {
+  label,
+  &.radio label,
+  &.checkbox label {
+    color: $color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .input {
+    border-color: $color;
+    &:focus {
+      border-color: lighten($color, 10%);
+    }
+  }
+}
+// Form control focus state
+@mixin form-control-focus($color: $input-border-focus) {
+  $color-rgba: rgba(red($color), green($color), blue($color), .6);
+  &:focus {
+    border-color: $color;
+    outline: 0;
+    //@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
+  }
+}
+// Form control sizing
+@mixin input-size( $input-height, $padding-base, $font-size, $line-height, $border-radius) {
+    height: $input-height;
+    padding: $padding-base;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+// Form
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}
+input[type="file"] {
+  display: block;
+}
+// Make range inputs behave like textual form controls
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+// Focus for file, radio, and checkbox
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  @include tab-focus;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea{
+  min-height: 6.5rem;
+  overflow:auto;
+}
+
+fieldset{
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+  line-height: inherit;
+  display: block;
+  width: 100%;
+}
+
+// Position radios and checkboxes better
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  line-height: normal;
+  margin:0;
+  margin-top: 4px \9;
+  opacity: 1;
+  left: 0;
+  top: 3px;
+}
+
+// Common form controls
+//
+.input {
+  display:block;
+  appearance: none; // Removes awkward default styles on some inputs for iOS
+  outline:none;
+  background-color: $input-bg;
+  border: rem(2) solid $input-border;
+  box-shadow: none;
+  box-sizing: border-box;
+  width: 100%;
+  color: $input-color;
+  @include input-size($input-height-base,$padding-base, $font-size-base, $line-height-base, $input-border-radius);
+  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+  // Customize the `:focus` state to imitate native WebKit styles.
+  @include form-control-focus;
+  // Placeholder
+  @include placeholder;
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    border: 0;
+    background-color: transparent;
+  }
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly] {
+    background-color: $input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+    cursor: $cursor-disabled;
+  }
+  &.is-large {
+    @include input-size($input-height-large, $padding-large, $font-size-large, $line-height-large, $border-radius-large);
+  }
+  &.is-small {
+    @include input-size($input-height-small, $padding-small, $font-size-small, $line-height-small, $border-radius-small);
+  }
+}
+select.input{
+  background:transparent;
+  background:url('data:image/svg+xml;utf8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" height="64" width="64" version="1" viewBox="0 0 64 64" xml:space="preserve"><path d="M12 21 32 42 52 21" style="fill:none;stroke-linecap:round;stroke-width:4;stroke:#{$gray}"/></svg>') no-repeat right 0.75rem center / 3rem 3rem;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  margin-bottom: 5px;
+  font-weight: 400;
+  padding: 0 rem(8);
+  font-size: 90%;
+  color: $gray;
+}
+
+
+// Search inputs in iOS
+// For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+// Special styles for iOS temporal inputs
+//
+// In Mobile Safari, setting `display: block` on temporal inputs causes the
+// text within the input to become vertically misaligned. As a workaround, we
+// set a pixel line-height that matches the given height of the input, but only
+// for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="month"] {
+    &.input {
+      line-height: $input-height-base;
+    }
+  }
+}
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.form-group {
+  position:relative;
+  &:not(:last-child),
+  .col {
+    margin-bottom: $form-group-margin-bottom!important;
+  }
+  .label + .input{
+    padding-left:135px!important;
+  }
+  .label {
+    width: 120px;
+    text-align: right;
+    position: absolute;
+    top: 2px;
+    margin: 0;
+    padding:$padding-base;
+    bottom: 2px;
+    color:$gray-light;
+    background: #fff;
+    left: 2px;
+  }
+  .col {
+    position: relative;
+    .label {
+      margin-left: 1rem;
+      width: (rem(120) - 1rem);
+    }
+  }
+  &.is-large {
+    .input{
+      @include input-size($input-height-large, $padding-large, $font-size-large, $line-height-large, $border-radius-large);
+    }
+    .label {
+      padding:$padding-large;
+    }
+  }
+  &.is-small {
+    .input{
+      @include input-size($input-height-small, $padding-small, $font-size-small, $line-height-small, $border-radius-small);
+    }
+    .label {
+      padding:$padding-small;
+    }
+  }
+}
+
+// Checkboxes and radios
+.radio,
+.checkbox {
+  // Ensure the input doesn't jump if no text with min-height
+  min-height: $line-height-computed; 
+  padding-left: rem(25);
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+  position: relative;
+  margin: .5rem;
+  line-height: 135%;
+  display:block;
+  &:focus{
+    outline:0;
+  }
+  &.inline{
+    display:inline-block;
+  }
+  input{
+    &:before {
+      @include transition(all .4s cubic-bezier(.45,1.8,.5,.75));
+      content: "";
+      position: absolute;
+      top: rem(1);
+      left:rem(0);
+      z-index: 1;
+      width: rem(12);
+      height:rem(12);
+      border-radius: 50%;  
+    }
+    &:after {
+      @include transition(all .4s cubic-bezier(.45,1.8,.5,.75));
+      content: "";
+      position: absolute;
+      top: rem(-3);
+      left:rem(-4);
+      width: rem(20);
+      height: rem(20);
+      background: #fff;
+      border: rem(2) solid $input-border;
+      border-radius:rem(20);
+      cursor: pointer;
+    }
+  }
+}
+.checkbox {
+  padding-left: 3.5rem;
+  input{
+    &:before {
+      background: $input-border;
+    }
+    &:checked{
+      &:before{
+        background:$color-primary;
+        left:rem(10);
+      }
+    }
+    &:after {     
+      width: rem(30);
+    }
+  }
+}
+.radio {
+  input{
+    &:before {
+      @include transform(scale(0,0));
+      background:$color-primary;
+    }   
+    &:checked {
+      &:before {
+       @include transform(scale(1,1)); 
+      }
+    }
+  }
+}
+// Feedback states
+.has-success {
+  @include form-control-validation($color-success);
+}
+.has-error {
+  @include form-control-validation($color-danger);
+}
+
+
+
