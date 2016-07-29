@@ -20,7 +20,8 @@ Expressive prefixes used are as follwing:
 
 ## Documentation
 
-Check the [Documentation](https://janvalo.github.io/averil/) here for snippets of elements and components of Averil
+Check the [Documentation](https://janvalo.github.io/averil/) here for snippets of elements and components of Averil.
+Please note that the documentation is still work in progress and it will be updated as we go along.
 
 ## Issues
 
