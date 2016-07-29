@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *::after, *::before {
   box-sizing: border-box; }
 
@@ -975,6 +976,18 @@ input[type="search"] {
   vertical-align: middle; }
   .badge + .badge {
     margin-left: 5px; }
+  .badge .is-close {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 1.4rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    line-height: 1.2rem;
+    float: right;
+    margin: 0 -5px 0 5px;
+    background: rgba(0, 0, 0, 0.1); }
+    .badge .is-close:after {
+      content: "×"; }
 
 .alert.is-dark,
 .badge.is-dark {
